@@ -4,14 +4,14 @@ package com.mycompany.mywebapp1.user;
 import javax.persistence.*;
 
 @Entity
-@Table(name ="user_pool")
+@Table(name ="users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
 
-    @Column(unique = true, length = 45)
+    @Column(unique = true,length = 45)
     private String email;
 
 
@@ -27,14 +27,14 @@ public class User {
     private String lastname;
 
 
-    @Column(nullable = false,length = 45,name = "birthday")
+    @Column(nullable = false,length = 45,name = "birth_day")
     private String birthday;
 
 
-    @Column(nullable = false,length = 45,name = "position")
+    @Column(nullable = false,length = 45,name = "p_osition")
     private String position;
 
-    @Column(nullable = false,unique = true,length = 13, name = "phone")
+    @Column(nullable = false,unique = true,length = 13, name = "p_hone")
     private String phone;
 
     public String getPhone() {

@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="hhtp://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="hhtp://www.thymeleaf.org
-hhtp://www.thymeleaf.org ">
+<html lang="en" xmlns:th="hhtp://www.thymeleaf.org" >
 <head>
     <meta charset="UTF-8">
     <title>USERS</title>
@@ -34,7 +32,7 @@ hhtp://www.thymeleaf.org ">
     <tbody>
 <th:block th:each = "user : ${listUsers}">
     <tr>
-<td>[[${user.id}]]</td>
+        <td>[[${user.id}]]</td>
         <td>[[${user.email}]]</td>
         <td>[[${user.firstname}]]</td>
         <td>[[${user.lastname}]]</td>
