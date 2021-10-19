@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="hhtp://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="hhtp://www.thymeleaf.org
+hhtp://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8">
+    <title>USERS</title>
+    <link rel="stylesheet" type="text/css" th:href=" @{/webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+<div class="container-fluid text-center">
+    <div><h2>Manage Users</h2> </div>
+    <div>
+        <a class ="h3" th:href="@{/users/new}">Add New User </a>
+    </div>
+    <div th:if="${message}" class="alert alert-success text-center">
+        [[${message}]]
+    </div>
+    <div>
+<table class ="table table-bordered">
+    <thead class="thead-dark">
+    <tr>
+        <th>ID</th>
+        <th>E-mail</th>
+        <th>Firstname</th>
+        <th>SecondName</th>
+        <th>Birthday</th>
+        <th>Position</th>
+        <th>Enabled</th>
+        <th>Phone</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+<th:block th:each = "user : ${listUsers}">
+    <tr>
+<td>[[${user.id}]]</td>
+        <td>[[${user.email}]]</td>
+        <td>[[${user.firstname}]]</td>
+        <td>[[${user.lastname}]]</td>
+        <td>[[${user.birthday}]]</td>
+        <td>[[${user.position}]]</td>
+        <td>[[${user.enabled}]]</td>
+        <td>[[${user.phone}]]</td>
+        <td>
+            <a class ="h6 mr-3" th:href="@{'/users/edit/' + ${user.id}}" > Edit </a>
+            <a class="h6" th:href="@{'/users/delete/' + ${user.id}}"> Delete </a>
+        </td>
+</tr>
+</th:block>
+    </tbody>
+</table>
+    </div>
+</div>
+</body>
+</html>
